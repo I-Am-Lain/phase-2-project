@@ -1,0 +1,9 @@
+<h1> CATEGORY INDEX </h1>
+
+<ul>
+    <% @category.each do |c| %>
+        <li><b>Category: </b><%= c.name %></li>
+
+        <br><br>
+    <% end %>
+</ul>

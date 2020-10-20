@@ -9,7 +9,6 @@ require 'rest-client'
 require 'json'
 
 
-
 response_string = RestClient.get("https://opentdb.com/api.php?amount=50&type=multiple")
 response_hash = JSON.parse(response_string)
 question_data = response_hash["results"]
@@ -28,7 +27,6 @@ question_data.each do |que|
     inc2: que["incorrect_answers"][1],
     inc3: que["incorrect_answers"][2],
     category_id: Category.find_or_create_by(name: que["category"]).id)
-
 end
 
 
