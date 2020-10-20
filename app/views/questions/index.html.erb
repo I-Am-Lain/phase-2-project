@@ -1,0 +1,14 @@
+<h1> QUESTIONS INDEX </h1>
+
+<ul>
+    <% @questions.each do |q| %>
+        <li><b>Difficulty: </b><%= q.difficulty %></li>
+        <li><b>Question: </b><%= q.content %></li>
+        <li><%= q.inc1 %></li>
+        <li><%= q.inc2 %></li>
+        <li><%= q.inc3 %></li>
+        <li><b>Correct Answer: </b><%= q.correct %></li>
+
+        <br><br>
+    <% end %>
+</ul>
