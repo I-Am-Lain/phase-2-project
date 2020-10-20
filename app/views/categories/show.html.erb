@@ -1,0 +1,13 @@
+<h1>CATEGORY SHOW PAGE</h1>
+
+<h2><%= @category.name %></h2>
+
+<ol>
+    <% @category.questions.each do |q| %>
+        <%= q.difficulty %>
+        <br>
+        <li><%= link_to q.content, question_path(q) %></li>
+        <br><br>
+    <% end %>
+</ol>
+

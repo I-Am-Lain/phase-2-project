@@ -1,9 +1,14 @@
 <h1> CATEGORY INDEX </h1>
 
 <ul>
-    <% @category.each do |c| %>
-        <li><b>Category: </b><%= c.name %></li>
+    <% @categories.each do |c| %>
+        <li><b>Category: </b><%= link_to c.name, category_path(c) %></li>
 
         <br><br>
     <% end %>
 </ul>
+
+
+
+
+<!--SORT ALPHABETICALLY-->
