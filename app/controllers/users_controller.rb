@@ -17,8 +17,6 @@ class UsersController < ApplicationController
         @user = User.find(params[:id])
     end
 
-<<<<<<< HEAD
-=======
     def create 
         @user = User.create(user_params)
         # if @user.after_save
@@ -33,5 +31,4 @@ class UsersController < ApplicationController
         def user_params
         params.require(:user).permit(:name, :password, :password_confirmation)
       end
->>>>>>> Justin
 end
