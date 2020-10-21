@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2020_10_19_202131) do
+=======
+ActiveRecord::Schema.define(version: 2020_10_21_190222) do
+>>>>>>> Justin
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
@@ -46,6 +50,10 @@ ActiveRecord::Schema.define(version: 2020_10_19_202131) do
     t.text "bio"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+<<<<<<< HEAD
+=======
+    t.string "password_digest"
+>>>>>>> Justin
   end
 
   add_foreign_key "questions", "categories"

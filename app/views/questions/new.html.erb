@@ -1,0 +1,39 @@
+<h1> HELLO FROM NEW PAGE </h1>
+
+<% if flash[:errors]%>
+  <% flash[:errors].each do |error| %>
+    <p><%= error %></p>
+  <% end %>
+<% end %>
+
+<%= form_for @question  do |q| %>
+  <%= q.label :content %>
+  <%= q.text_area :content %>
+  <br>
+  
+  <%= q.label :difficulty %>
+  <%= q.text_field :difficulty %>
+  <br>
+
+  <%= q.label :inc1 %>
+  <%= q.text_field :inc1 %>
+  <br>
+  
+  <%= q.label :inc2 %>
+  <%= q.text_field :inc2 %>
+  <br>
+  
+  <%= q.label :inc3 %>
+  <%= q.text_field :inc3 %>
+  <br>
+
+  <%= q.label :correct %>
+  <%= q.text_field :correct %>
+  <br>
+
+  <%= q.collection_select :category_id, Category.all, :id, :name %>
+  <br>
+
+  <%= q.submit %>
+
+<% end %>

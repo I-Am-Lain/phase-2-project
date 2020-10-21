@@ -4,7 +4,11 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.6.1'
 
 gem 'rest-client'
+<<<<<<< HEAD
 gem 'cgi'
+=======
+gem 'bcrypt'
+>>>>>>> Justin
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails'
@@ -54,4 +58,8 @@ group :test do
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
+<<<<<<< HEAD
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+=======
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+>>>>>>> Justin
