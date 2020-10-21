@@ -1,6 +1,32 @@
-<h1> QUESTIONS INDEX </h1>
+<h1> QUESTIONS MENU </h1>
+<br>
 
-<ul>
+<% if flash[:error]%>
+    <%= flash[:error] %>
+<% end %>
+
+<% @questions.map do |question| %>
+  <ul>
+    <p>Level: <%= question.difficulty %> </p>
+    <h4>Riddle me this: <%= question.content %></h4>
+    <li>Wrong Answer: <%= question.inc1 %></li>
+    <li>Wrong Answer: <%= question.inc2 %></li>
+    <li>Wrong Answer: <%= question.inc3 %></li>
+    <li>Correct Answer : <%= question.correct %></li>
+    <%=
+        button_to "Add To Cart",
+        add_to_cart_path,
+        method: :patch,
+        params: { question_id: question.id, name: question.content }
+      %>
+  </ul>
+
+  <br>
+  <br>
+  
+<% end %>
+    
+<!-- <ul>
     <% @questions.each do |q| %>
         <li><b>Difficulty: </b><%= q.difficulty %></li>
         <li><b>Question: </b><%= q.content %></li>
@@ -8,7 +34,7 @@
         <li><%= q.inc2 %></li>
         <li><%= q.inc3 %></li>
         <li><b>Correct Answer: </b><%= q.correct %></li>
-
         <br><br>
     <% end %>
-</ul>
+</ul> -->
+

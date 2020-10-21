@@ -7,20 +7,21 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'rest-client'
 require 'json'
+require 'byebug'
 
-
-response_string = RestClient.get("https://opentdb.com/api.php?amount=50&type=multiple")
+response_string = RestClient.get("https://opentdb.com/api.php?amount=50&type=multiple") 
 response_hash = JSON.parse(response_string)
 question_data = response_hash["results"]
 
 question_data.each do |que|
     Category.find_or_create_by(name: que["category"])
+    
 end
 
 
 
 question_data.each do |que|
-    Question.create(content: que["question"],
+    Question.create(content: que["question"].encode("UTF-8"),
     difficulty: que["difficulty"],
     correct: que["correct_answer"],
     inc1: que["incorrect_answers"][0],
