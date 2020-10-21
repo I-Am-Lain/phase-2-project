@@ -5,7 +5,6 @@ class QuestionsController < ApplicationController
         @questions = Question.all
         @question = Question.new
 
-        @set = Set.create(@cart_items)
     end
 
     def new

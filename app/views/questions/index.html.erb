@@ -21,7 +21,7 @@
 <% @questions.map do |question| %>
   <ul>
     <p>Level: <%= question.difficulty %> </p>
-    <h4>Riddle me this: <%= question.content %></h4>
+    <h4>Riddle me this: <%== question.content %></h4>
     <li>Wrong Answer: <%= question.inc1 %></li>
     <li>Wrong Answer: <%= question.inc2 %></li>
     <li>Wrong Answer: <%= question.inc3 %></li>
