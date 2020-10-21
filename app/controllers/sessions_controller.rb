@@ -1,21 +1,21 @@
 class SessionsController < ApplicationController 
-  
+  skip_before_action :require_login, only: [:create, :new, :signup]
+
   def new
   end
 
   def create
     user = User.find_by(name: params[:user][:name])
 
-    user = user.try(:authenticate, params[:user][:password])
-
-    return redirect_to(controller: 'sessions', action: 'new') unless user 
-
-    session[:user_id] = user.id 
-
+    session[:user_id] = user.id
     @user = user
 
+    if user && user.authenticate(params[:user][:password])
+      redirect_to controller: 'welcome', action: 'home'
+    else  
+    redirect_to(controller: 'sessions', action: 'new')
+    end 
     
-    redirect_to controller: 'welcome', action: 'home'
   end
 
   def destroy

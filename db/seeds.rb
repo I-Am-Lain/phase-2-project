@@ -32,8 +32,8 @@ end
 
 
 
-User.create(name: "William", picture: "https://i.pinimg.com/originals/fa/44/fd/fa44fda4399559fa9dc418c7bb390457.png", bio: "blehhhhh")
-User.create(name: "Justin", picture: "https://momandmore.com/wp-content/uploads/2014/09/morton-salt-girl-logo.png", bio: "yahoooooooooooooooooooooo")
+# User.create(name: "William", picture: "https://i.pinimg.com/originals/fa/44/fd/fa44fda4399559fa9dc418c7bb390457.png", bio: "blehhhhh")
+# User.create(name: "Justin", picture: "https://momandmore.com/wp-content/uploads/2014/09/morton-salt-girl-logo.png", bio: "yahoooooooooooooooooooooo")
 
 
 UserQuestion.create(user_id: 1, question_id: 1)
