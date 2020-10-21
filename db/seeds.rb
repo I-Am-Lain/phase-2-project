@@ -8,7 +8,7 @@
 require 'rest-client'
 require 'json'
 
-
+# REFER TO API DOC FOR ESCAPING ''
 response_string = RestClient.get("https://opentdb.com/api.php?amount=50&type=multiple")
 response_hash = JSON.parse(response_string)
 question_data = response_hash["results"]
@@ -17,7 +17,9 @@ question_data.each do |que|
     Category.find_or_create_by(name: que["category"])
 end
 
-
+# create new question in db as user creates a question
+# join table to assoc question
+# user authe    store user id in session, create UserQuestion with current session[:user_id] and the question
 
 question_data.each do |que|
     Question.create(content: que["question"],
