@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+    # before_action :require_login
+    # skip_before_action :require_login, only: [:new, :create]
 
     def main
         
@@ -12,11 +14,13 @@ class UsersController < ApplicationController
         @user = User.find(params[:id])
     end
 
-    def create
-        User.create(user_params)
+    def create 
+        @user = User.create(user_params)
+        # if @user.after_save
+
         return redirect_to controller: 'users', action: 'new' unless @user.save
         session[:user_id] = @user.id
-        redirect_to controller: 'welcome', action: 'home'
+        redirect_to controller: 'user', action: 'index'
     end
     
       private

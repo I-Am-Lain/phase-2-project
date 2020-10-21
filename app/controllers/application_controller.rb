@@ -1,7 +1,7 @@
 require 'byebug'
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :null_session
-  before_action  :current_user, :require_login 
+  before_action  :current_user
   helper_method :require_login, :current_user  
 
   

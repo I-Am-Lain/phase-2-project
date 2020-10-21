@@ -7,3 +7,6 @@ class User < ApplicationRecord
 
     validates :name, uniqueness: {case_sensitive: false}
 end
+
+# <!-- <%= image_tag @user.picture, alt: "Justin's Fabulous Picture" %> -->
+# <li><%= image_tag u.picture, alt: "Justin's Fabulous Picture", size: "260x180" %></li>
