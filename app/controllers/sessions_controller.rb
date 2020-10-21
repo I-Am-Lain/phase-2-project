@@ -3,7 +3,6 @@ class SessionsController < ApplicationController
   skip_before_action :require_login, only: [:create, :new, :signup]
 
   def new
-    # byebug
   end
 
   def create 

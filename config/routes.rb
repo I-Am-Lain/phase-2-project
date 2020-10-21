@@ -3,8 +3,7 @@ Rails.application.routes.draw do
   resources :categories
   resources :questions
   resources :users
-  
-  get 'welcome/home'
+
   patch '/cart', to: 'cart#update', as: 'add_to_cart'
   get '/login', to: 'sessions#new'
   get 'signup', to: 'users#new', as: 'signup'
