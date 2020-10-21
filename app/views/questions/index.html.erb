@@ -5,6 +5,19 @@
     <%= flash[:error] %>
 <% end %>
 
+<% @cart_items.each do |q| %>
+    <%= q.difficulty %>
+    <br>
+    <%= q.content %>
+    <br>
+    <br>
+<% end %>
+
+<%= form_for @question do |f| %>
+
+  <%= f.submit %>
+<% end %>
+
 <% @questions.map do |question| %>
   <ul>
     <p>Level: <%= question.difficulty %> </p>
@@ -14,7 +27,7 @@
     <li>Wrong Answer: <%= question.inc3 %></li>
     <li>Correct Answer : <%= question.correct %></li>
     <%=
-        button_to "Add To Cart",
+        button_to "Add Question To Cart",
         add_to_cart_path,
         method: :patch,
         params: { question_id: question.id, name: question.content }

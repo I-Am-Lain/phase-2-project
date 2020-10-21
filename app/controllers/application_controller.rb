@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
     @cart_items = Question.find(cart)
   end
 
-   # Finds the User with the ID stored in the session with the key
+  # Finds the User with the ID stored in the session with the key
   # :get_user This is a common way to handle user login in
   # a Rails application; logging in sets the session value and
   # logging out removes it.
