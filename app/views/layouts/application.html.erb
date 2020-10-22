@@ -10,8 +10,14 @@
 
   <body>
 
-
   <% if logged_in %>
+    <div class="navigation">
+      <ul>
+        <a href="/users/<%= @user.id %>">Dashboard</a>
+        <a href="/cart">Cart</a>
+      </ul>
+    </div>
+
     <%= form_tag ({controller: 'sessions', action: 'destroy', method: 'post'}) do %>
       <input type=submit value='logout'>
     <% end %>
