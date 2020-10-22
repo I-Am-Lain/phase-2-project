@@ -1,9 +1,11 @@
 <h1>WELCOME HOME</h1>
-<h2><%= @user.name%></h2>
 
+<br>
 
-<!--<%= image_tag "https://www.pojo.com/wp-content/uploads/2018/05/hello-there.jpg", alt: "Well Hello There" %>-->
-
-
-<%= link_to(controller: 'sessions', action: 'new') { 'Log In' } %> Or <%= link_to 'Sign Up', signup_path %>
+<% if @user.id %>
+    <img src="<%= @user.picture %>" alt="User's Picture"%>
+    <h2 style="color:green"><%= @user.name %>, you are currently logged in.</h2>
+<% else %>
+    <%= link_to(controller: 'sessions', action: 'new') { 'Log In' } %> Or <%= link_to 'Sign Up', signup_path %>
+<% end %>
 
