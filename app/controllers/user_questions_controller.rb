@@ -1,6 +1,4 @@
 class UserQuestionsController < ApplicationController
-<<<<<<< HEAD
-=======
     
     def index
         
@@ -29,5 +27,4 @@ class UserQuestionsController < ApplicationController
     def destroy
     
     end
->>>>>>> Justin
 end

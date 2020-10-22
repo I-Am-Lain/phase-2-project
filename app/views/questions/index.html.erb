@@ -22,10 +22,10 @@
   <ul>
     <p>Level: <%= question.difficulty %> </p>
     <h4>Riddle me this: <%== question.content %></h4>
-    <li>Wrong Answer: <%= question.inc1 %></li>
-    <li>Wrong Answer: <%= question.inc2 %></li>
-    <li>Wrong Answer: <%= question.inc3 %></li>
-    <li>Correct Answer : <%= question.correct %></li>
+    <li>Wrong Answer: <%== question.inc1 %></li>
+    <li>Wrong Answer: <%== question.inc2 %></li>
+    <li>Wrong Answer: <%== question.inc3 %></li>
+    <li>Correct Answer : <%== question.correct %></li>
     <%=
         button_to "Add Question To Cart",
         add_to_cart_path,
@@ -38,16 +38,3 @@
   <br>
   
 <% end %>
-    
-<!-- <ul>
-    <% @questions.each do |q| %>
-        <li><b>Difficulty: </b><%= q.difficulty %></li>
-        <li><b>Question: </b><%= q.content %></li>
-        <li><%= q.inc1 %></li>
-        <li><%= q.inc2 %></li>
-        <li><%= q.inc3 %></li>
-        <li><b>Correct Answer: </b><%= q.correct %></li>
-        <br><br>
-    <% end %>
-</ul> -->
-

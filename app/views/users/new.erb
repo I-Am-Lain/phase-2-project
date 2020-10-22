@@ -1,8 +1,51 @@
+<h1> SIGN-UP PAGE! (users#new) </h1>
+
+~~~<br>
+~~~<br>
+~~~<br>
+
+<h2> Please enter registration details: </h2>
+
+
 <%= form_for :user, url: '/users' do |f| %>
   Username: <%= f.text_field :name %>
 
+  <br><br>
+
   Password: <%= f.password_field :password %>
+
+  <br><br>
   
   Password Confirmation: <%= f.password_field :password_confirmation %>
+
+  <br><br>
+
+  <h3>Enter your backstory, mysterious Stranger:<h3>
+  <%= f.text_area :bio %>
+
+  <br><br>
+
+  <h3>Choose your Warrior:</h3>
+  <img src="<%= $NETFLIX[0] %>" height=128 >
+  <%= f.radio_button :picture, $NETFLIX[0] %>
+  <img src="<%= $NETFLIX[1] %>" height=128 >
+  <%= f.radio_button :picture, $NETFLIX[1] %>
+  <img src="<%= $NETFLIX[2] %>" height=128 >
+  <%= f.radio_button :picture, $NETFLIX[2] %>
+  <img src="<%= $NETFLIX[3] %>" height=128 >
+  <%= f.radio_button :picture, $NETFLIX[3] %>
+
+  <br><br>
+
+
+
+  <br><br>  <br><br>
   <%= f.submit %>
 <% end %>
+
+
+<br>
+  or
+<br><br>
+
+<%= link_to(controller: 'welcome', action: 'home') { 'Go Back' } %>

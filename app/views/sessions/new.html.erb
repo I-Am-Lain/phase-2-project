@@ -1,7 +1,8 @@
-<!-- <h1>Sessions#new</h1>
+<h1>WELCOME BACK! Please, log in.</h1>
+<h2><%= @user.name %></h2>
 
  
-<%= image_tag "https://www.pojo.com/wp-content/uploads/2018/05/hello-there.jpg", alt: "Well Hello There" %>
+<%= image_tag "https://media.istockphoto.com/photos/login-word-picture-id177839258", alt: "Please log-in" %>
 
 
 <%= form_with(scope: :session, url: login_path, local: true) do |f| %>
@@ -11,24 +12,5 @@
   <%= f.label :password %>
   <%= f.password_field :password %>
 
-  <%= f.submit "log in" %> Or <%= link_to(controller: 'users', action: 'new') { 'sign up' } %>
+  <%= f.submit "log in" %> Or <%= link_to(controller: 'welcome', action: 'home') { 'back' } %>
 <% end %>
-
-
-
-<!-- <h1>Sessions#new</h1>
-
- 
-<%= image_tag "https://www.pojo.com/wp-content/uploads/2018/05/hello-there.jpg", alt: "Well Hello There" %>
-
-
-<%= form_for @user, url: login_path, method: :post do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-
-  <%= f.label :password %>
-  <%= f.password_field :password %>
-
-  <%= f.submit "log in" %>
-  Or <%= link_to(controller: 'users', action: 'new') { 'sign up' } %>
-<% end %> --> -->

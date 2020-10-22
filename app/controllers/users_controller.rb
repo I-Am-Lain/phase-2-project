@@ -16,16 +16,15 @@ class UsersController < ApplicationController
 
     def create 
         @user = User.create(user_params)
-        # if @user.after_save
 
         return redirect_to controller: 'users', action: 'new' unless @user.save
         session[:user_id] = @user.id
-        redirect_to controller: 'user', action: 'index'
+        redirect_to controller: 'users', action: 'index'
     end
     
       private
     
         def user_params
-        params.require(:user).permit(:name, :password, :password_confirmation)
+        params.require(:user).permit(:name, :password, :password_confirmation, :bio, :picture)
       end
 end

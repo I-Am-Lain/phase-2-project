@@ -9,13 +9,13 @@ class SessionsController < ApplicationController
   def create 
     user = User.find_by(name: params[:session][:name])
   
-    session[:user_id] = user.id
-    @current_user = user
+    #@current_user = user
 
     if user && user.authenticate(params[:session][:password])
+      session[:user_id] = user.id
       redirect_to user_path(user)
     else  
-    redirect_to(controller: 'sessions', action: 'new')
+      redirect_to(controller: 'welcome', action: 'home')
     end 
     
   end

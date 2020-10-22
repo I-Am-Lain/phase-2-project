@@ -1,8 +1,14 @@
+<audio src="https://vgmdownloads.com/soundtracks/lord-of-the-rings-the-fellowship-of-the-ring-howard-shore/ihkpkoki/05%20The%20Black%20Rider.mp3"controls></audio>
+
 <h1> <%= @user.name %>'s Show Page </h1>
 <br>
 <br>
 
-<%= image_tag "https://www.pojo.com/wp-content/uploads/2018/05/hello-there.jpg", alt: "Well Hello There" %>
+<img src="<%= @user.picture %>", alt: "Well Hello There", height = 320 > <br>
+
+
+<%= @user.bio %>
+
 
 
 <h3><%= link_to "CATEGORIES", categories_path %></h3>
@@ -10,12 +16,3 @@
 <br>
 
 <h3><%= link_to "QUESTIONS", questions_path %></h3>
-
-<%= @user.bio %>
-
-
-<br>
-
-<%= form_tag ({controller: 'sessions', action: 'destroy', method: 'post'}) do %>
-  <input type=submit value='logout'>
-<% end %>
