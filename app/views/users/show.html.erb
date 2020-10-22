@@ -9,10 +9,4 @@
 
 <%= @user.bio %>
 
-
-
-<h3><%= link_to "CATEGORIES", categories_path %></h3>
-
-<br>
-
-<h3><%= link_to "QUESTIONS", questions_path %></h3>
+<%= button_to "Edit Profile", edit_user_path, method: "get" %>

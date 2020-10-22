@@ -26,6 +26,18 @@ class UsersController < ApplicationController
         session[:user_id] = @user.id
         redirect_to controller: 'users', action: 'index'
     end
+
+    def update
+        @user.update(user_params)
+
+        if @user.valid?
+            flash[:alert] = "SUCCESSFUL EDIT BRO :))))"
+            redirect_to user_path(@user)
+        else
+            flash[:alert] = "Edit was unsuccessful..."
+            redirect_to edit_user_path
+        end
+    end
     
       private
     

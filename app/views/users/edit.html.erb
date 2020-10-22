@@ -1,0 +1,47 @@
+<h1> ~~~Edit your profile~~~ </h1>
+
+<br>
+<br>
+<br>
+
+<h2>Profile Picture:</h2>
+<img src="<%= $NETFLIX[0] %>" height=512 >
+<h2>Username:</h2>
+    <p><%= @user.name %></p>
+<h2>Bio:</h2>
+    <p><%= @user.bio %></p>
+
+<b>|</b><br>
+<b>|</b><br>
+<b>|</b><br>
+<b>|</b><br>
+<b>|</b><br>
+
+<%= form_for @user do |u| %>
+  <h2><%= u.label :name %></h2>
+  <%= u.text_field :name %>
+
+  <br><br>
+
+  <h2>Edit your backstory, mysterious Stranger:</h2>
+  <%= u.text_area :bio %>
+
+  <br><br>
+
+  <h2><%= u.label :URL_of_profile_picture %></h2>
+  <%= u.text_field :picture %>
+
+  <br><br>
+
+
+
+  <br><br>  <br><br>
+  <%= u.submit %>
+<% end %>
+
+
+<br>
+  or
+<br><br>
+
+<%= link_to(controller: 'welcome', action: 'home') { 'Go Back' } %>
