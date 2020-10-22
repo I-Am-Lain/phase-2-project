@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
   "https://i.pinimg.com/474x/9b/e0/dd/9be0dd55b5976504186558ac71c4035e.jpg",
   "https://upload.wikimedia.org/wikipedia/commons/4/4a/Alexandria_Ocasio-Cortez_Official_Portrait.jpg"]
 
-  
+
   def current_user
     @user = (User.find_by(id: session[:user_id]) || User.new)
   end

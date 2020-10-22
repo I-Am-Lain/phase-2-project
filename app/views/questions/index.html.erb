@@ -16,20 +16,24 @@
 
 
 <% @questions.map do |question| %>
-  <ul>
-    <p>Level: <%= question.difficulty %> </p>
-    <h4>Riddle me this: <%== question.content %></h4>
-    <li>Wrong Answer: <%== question.inc1 %></li>
-    <li>Wrong Answer: <%== question.inc2 %></li>
-    <li>Wrong Answer: <%== question.inc3 %></li>
-    <li>Correct Answer : <%== question.correct %></li>
+  <ol>
+    <h3>Topic: <%== question.category.name %></h3>
+    <h3 style="color:green">Level: <%= question.difficulty %> </h3>
+    <h4>Question: </h4>
+    <li><b><u><%== question.content %></b></u></li>
+    <ul>
+      <li>Wrong Answer: <%== question.inc1 %></li>
+      <li>Wrong Answer: <%== question.inc2 %></li>
+      <li>Wrong Answer: <%== question.inc3 %></li>
+      <li>Correct Answer : <%== question.correct %></li>
+    </ul>
     <%=
         button_to "Add Question To Cart",
         add_to_cart_path,
         method: :patch,
         params: { question_id: question.id, name: question.content }
       %>
-  </ul>
+  </ol>
 
   <br>
   <br>
