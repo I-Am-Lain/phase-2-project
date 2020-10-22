@@ -13,7 +13,14 @@
   <% if logged_in %>
     <div class="navigation">
       <ul>
+        <a href="/">Home</a>
+        &emsp;
         <a href="/users/<%= @user.id %>">Dashboard</a>
+        &emsp;
+        <a href="/questions">Browse Questions</a>
+        &emsp;
+        <a href="/categories">Browse Categories</a>
+        &emsp;
         <a href="/cart">Cart</a>
       </ul>
     </div>

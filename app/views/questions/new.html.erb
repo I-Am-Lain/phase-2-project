@@ -1,33 +1,35 @@
 <h1> HELLO FROM NEW PAGE </h1>
 
 <%= form_for @question  do |q| %>
-  <%= q.label :content %>
+  <%= q.label :content %><br>
   <%= q.text_area :content %>
-  <br>
+  <br><br>
   
-  <%= q.label :difficulty %>
+  <%= q.label :difficulty %><br>
   <%= q.text_field :difficulty %>
-  <br>
+  <br><br>
 
-  <%= q.label :inc1 %>
-  <%= q.text_field :inc1 %>
-  <br>
-  
-  <%= q.label :inc2 %>
-  <%= q.text_field :inc2 %>
-  <br>
-  
-  <%= q.label :inc3 %>
-  <%= q.text_field :inc3 %>
-  <br>
-
-  <%= q.label :correct %>
+  <%= q.label :correct %><br>
   <%= q.text_field :correct %>
-  <br>
+  <br><br>
+  
+  <%= q.label :incorrect_answer_1 %><br>
+  <%= q.text_field :inc1 %>
+  <br><br>
+  
+  <%= q.label :incorrect_answer_2 %><br>
+  <%= q.text_field :inc2 %>
+  <br><br>
+  
+  <%= q.label :incorrect_answer_3 %><br>
+  <%= q.text_field :inc3 %>
+  <br><br>
+
 
   <%= q.collection_select :category_id, Category.all, :id, :name %>
-  <br>
-
+  
+  
+  <br><br>
   <%= q.submit %>
 
 <% end %>

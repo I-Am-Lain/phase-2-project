@@ -19,10 +19,10 @@ class UsersController < ApplicationController
 
         unless @user.save
             flash[:alert] = "Invalid Sign-In"
-            return redirect_to controller: 'users', action: 'new'
+            return redirect_to signup_path
         end
-
         # return redirect_to controller: 'users', action: 'new' unless @user.save
+        
         session[:user_id] = @user.id
         redirect_to controller: 'users', action: 'index'
     end
