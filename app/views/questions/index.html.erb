@@ -1,9 +1,6 @@
 <h1> QUESTIONS MENU </h1>
 <br>
 
-<% if flash[:error]%>
-    <%= flash[:error] %>
-<% end %>
 
 <% @cart_items.each do |q| %>
     <%= q.difficulty %>
@@ -13,10 +10,10 @@
     <br>
 <% end %>
 
-<%= form_for @question do |f| %>
+<%= link_to 'CREATE A QUESTION!!!!', new_question_path %>
 
-  <%= f.submit %>
-<% end %>
+<%= button_to "CREATE A NEW QUESTION :D", new_question_path, method: "get" %>
+
 
 <% @questions.map do |question| %>
   <ul>

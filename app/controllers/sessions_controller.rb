@@ -15,7 +15,8 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       redirect_to user_path(user)
     else  
-      redirect_to(controller: 'welcome', action: 'home')
+      flash[:alert] = "Invalid credentials"
+      redirect_to(controller: 'sessions', action: 'new')
     end 
     
   end

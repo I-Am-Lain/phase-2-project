@@ -6,8 +6,7 @@ class User < ApplicationRecord
     has_secure_password
 
     validates :name, uniqueness: {case_sensitive: false}
-    validates :name, presence: true
+    validates :name, :bio, :picture, presence: true
 end
 
-# <!-- <%= image_tag @user.picture, alt: "Justin's Fabulous Picture" %> -->
-# <li><%= image_tag u.picture, alt: "Justin's Fabulous Picture", size: "260x180" %></li>
+

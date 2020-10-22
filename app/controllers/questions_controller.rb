@@ -16,11 +16,11 @@ class QuestionsController < ApplicationController
         @question = Question.new(question_params)
         
         if @question.save
-            flash[:error] = "Great Job! That was added to our database"
+            flash[:alert] = "Great Job! That was added to our database"
             
             redirect_to questions_path
         else
-            flash[:error] = @question.errors.full_messages
+            flash[:alert] = "Error, question was not saved"
 
             render :new
         end
