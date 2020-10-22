@@ -1,4 +1,4 @@
-<h1> ~~~Edit your profile~~~ </h1>
+<h1> ~~~Dashboard~~~ </h1>
 
 <br>
 <br>
@@ -36,12 +36,22 @@
 
 
   <br><br>  <br><br>
-  <%= u.submit %>
+  <%= u.submit "Edit My Profile" %>
 <% end %>
 
 
 <br>
   or
 <br><br>
+
+<% if @user.id != nil %>
+    <%= button_to "Delete My Account :o", user_path(@user), method: "delete", data: { confirm: 'Are you sure?' } %>
+
+    <br><br>
+    or
+    <br><br>
+<% end %>
+
+
 
 <%= link_to(controller: 'welcome', action: 'home') { 'Go Back' } %>

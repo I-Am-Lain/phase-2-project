@@ -1,9 +1,9 @@
 class UsersController < ApplicationController
-    # before_action :require_login
-    # skip_before_action :require_login, only: [:new, :create]
+    before_action :require_login
+    skip_before_action :require_login, only: [:new, :create, :index, :show]
 
-    def main
-        
+    def dashboard
+
     end
 
     def index
@@ -37,6 +37,11 @@ class UsersController < ApplicationController
             flash[:alert] = "Edit was unsuccessful..."
             redirect_to edit_user_path
         end
+    end
+
+    def destroy
+        @user.destroy
+        redirect_to '/'
     end
     
       private
