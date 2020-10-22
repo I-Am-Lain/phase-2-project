@@ -20,7 +20,7 @@ class ApplicationController < ActionController::Base
   def require_login
     unless logged_in 
     flash[:alert] = "You must be logged in for swag."
-    redirect_to(controller: 'sessions', action: 'new') # halts request cycle
+    redirect_to(controller: 'welcome', action: 'home') # halts request cycle
     end 
   end
 

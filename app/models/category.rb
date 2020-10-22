@@ -1,5 +1,6 @@
 class Category < ApplicationRecord
     has_many :questions
+    has_many :users #may not be true
 
     def list_of_users
         UserQuestion.all.map do |uq|

@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
     before_action :require_login
     skip_before_action :require_login, only: [:new, :create, :index, :show]
+    # i think this cancels out
 
     def new
         if @user.id
@@ -24,7 +25,6 @@ class UsersController < ApplicationController
             flash[:alert] = "Invalid Sign-In"
             return redirect_to signup_path
         end
-        # return redirect_to controller: 'users', action: 'new' unless @user.save
         
         session[:user_id] = @user.id
         redirect_to controller: 'users', action: 'index'

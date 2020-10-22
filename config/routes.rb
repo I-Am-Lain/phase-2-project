@@ -2,7 +2,11 @@ Rails.application.routes.draw do
   resources :user_questions
   resources :categories
   resources :questions
-  resources :users
+  resources :users do
+    resources :themes, only: [:show, :new, :create, :index]
+  end
+  resources :themes, only: [:index]
+  resources :theme_categories
   
   patch '/cart', to: 'cart#update', as: 'add_to_cart'
   get '/login', to: 'sessions#new'

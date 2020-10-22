@@ -1,7 +1,7 @@
 class User < ApplicationRecord
-    has_many :user_questions
-    has_many :questions, through: :user_questions
-    has_many :categories, through: :questions
+    has_many :themes
+    has_many :categories, through: :themes
+    has_many :questions, through: :categories
 
     has_secure_password
 

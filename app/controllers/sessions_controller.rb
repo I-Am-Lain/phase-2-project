@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController 
-  before_action :current_user, :require_login
-  skip_before_action :require_login, only: [:create, :new, :signup]
+  before_action :current_user#, :require_login
+  #skip_before_action :require_login, only: [:create, :new, :signup]
   #i think we don't need the above, both lines cancel each other out
 
 

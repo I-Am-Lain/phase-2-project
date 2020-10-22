@@ -1,0 +1,7 @@
+<h1> SHOWING <%= @user.name %>'s THEMES</h1>
+
+<ul>
+    <% @themes.each do |t| %>
+        <li><%= link_to t.title, user_theme_path(@user, t) %></li>
+    <% end %>
+</ul>

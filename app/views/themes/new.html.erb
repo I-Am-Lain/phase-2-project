@@ -1,0 +1,12 @@
+<h1> Create a new Theme Set! </h1>
+
+<%= form_for [@user, @theme] do |t| %>
+  <%= t.label :title %><br>
+  <%= t.text_area :title %>
+  <br><br>
+
+  
+  <br><br>
+  <%= t.submit %>
+
+<% end %>
