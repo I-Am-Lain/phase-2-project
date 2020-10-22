@@ -2,8 +2,11 @@ class UsersController < ApplicationController
     before_action :require_login
     skip_before_action :require_login, only: [:new, :create, :index, :show]
 
-    def dashboard
-
+    def new
+        if @user.id
+            flash[:alert] = "You are already signed up"
+            redirect_to '/'
+        end
     end
 
     def index

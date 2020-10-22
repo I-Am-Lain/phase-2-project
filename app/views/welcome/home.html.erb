@@ -3,8 +3,9 @@
 <br>
 
 <% if @user.id %>
-    <img src="<%= @user.picture %>" alt="User's Picture"%>
-    <h2 style="color:green"><%= @user.name %>, you are currently logged in.</h2>
+    <img src="<%= @user.picture %>" alt="User's Picture" height="256" %>
+    <h2 style="color:green"><%= @user.name %>,</h2>
+    <h2 style="color:green">you are logged in :)</h2>
 <% else %>
     <%= link_to(controller: 'sessions', action: 'new') { 'Log In' } %> Or <%= link_to 'Sign Up', signup_path %>
 <% end %>
