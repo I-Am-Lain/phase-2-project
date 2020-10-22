@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-class ApplicationController < ActionController::Base
-    require 'cgi'
-=======
 require 'byebug'
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :null_session
@@ -34,5 +30,4 @@ class ApplicationController < ActionController::Base
   def get_items_from_cart
     @cart_items = Question.find(cart)
   end
->>>>>>> Justin
 end

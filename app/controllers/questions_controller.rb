@@ -1,10 +1,4 @@
 class QuestionsController < ApplicationController
-<<<<<<< HEAD
-
-    def index
-        @questions = Question.all
-    end
-=======
     before_action :get_items_from_cart
 
     def index
@@ -39,5 +33,4 @@ class QuestionsController < ApplicationController
         params.require(:question).permit(:content, :difficulty, :inc1, :inc2, :inc3, :correct, :category_id)
     end
 
->>>>>>> Justin
 end
