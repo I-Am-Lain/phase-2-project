@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   post '/play', to: 'game#play'
 
   post '/end', to: 'game#end'
+  post '/themes/:id/result', to: 'themes#result'
   
   patch '/cart', to: 'cart#update', as: 'add_to_cart'
   get '/login', to: 'sessions#new'

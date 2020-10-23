@@ -1,0 +1,57 @@
+<h1> Your results: <h1>
+
+<br><br>
+
+
+<% counter = 0 %>
+<% points = 0 %>
+<% total = 0 %>
+
+<ol>
+    <% params[:question_ids].each do |q| %>
+    <% total += Question.find(q.to_i).difficulty.to_i %>
+        <li><i><u><%= Question.find(q.to_i).content %></u></i></li>
+        Points: <%= Question.find(q.to_i).difficulty.to_i %>  Category: <%= Question.find(q.to_i).category.name %>
+            <ul>
+                <li style="color:yellow">Correct Answer: <%= Question.find(q.to_i).correct %></li>
+                <li style="color:yellow">You answered: <%= params[:answer][counter] %></li>
+            </ul>
+        <% if (Question.find(q.to_i).correct.downcase.split - params[:answer][counter].downcase.split).empty? %>
+            <p style="color:green">True! </p>
+            <% points += Question.find(q.to_i).difficulty.to_i%>
+        <% else %>
+            <p style="color:red">False :( </p>
+        <% end %>
+        <br><br><br>
+        <% counter += 1 %>
+    <% end %>
+</ol>
+
+<br><br>
+
+Points: <%= points %> out of <%= total %>
+
+
+
+
+
+
+<!--
+<%= params %>
+
+<br>
+
+<%= @theme %>
+
+<br>
+
+<% params[:answer].each do |a| %>
+    <%= a %>
+<% end %>
+
+
+<br><br>
+
+
+<%= params[:question_key] %>
+-->

@@ -1,5 +1,6 @@
 class ThemesController < ApplicationController
     before_action :require_login
+    skip_before_action :verify_authenticity_token
     
 
     def index
@@ -29,6 +30,12 @@ class ThemesController < ApplicationController
             flash[:alert] = "Create Set was NOT successful :("
             redirect_to new_user_theme_path
         end
+    end
+
+    def result
+        @theme = Theme.find(params[:id])
+
+
     end
     
 
