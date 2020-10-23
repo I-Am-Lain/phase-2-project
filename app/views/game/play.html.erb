@@ -1,1 +1,13 @@
 <h1> TIME 2 PLAY </h1>
+
+
+THIS IS ACCEPTING OPTIONS !!!
+
+<ol>
+<% @theme.categories.each do |c| %>
+    <h2><%= c.name %></h2>
+    <% c.questions.sample(10).each do |q| %>
+        <li><%= q.content %></li>
+    <% end %>
+<% end %>
+<ol>

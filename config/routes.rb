@@ -9,10 +9,10 @@ Rails.application.routes.draw do
   resources :theme_categories
 
 
-  get '/game', to: 'game#options'
-  get '/play', to: 'game#play'
+  get '/options', to: 'game#options'
+  #get '/play', to: 'game#play'
   
-  post '/game', to: 'game#accept_options', as: '/accept_options'
+  post '/play', to: 'game#play'
 
   
   patch '/cart', to: 'cart#update', as: 'add_to_cart'

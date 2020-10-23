@@ -5,7 +5,7 @@
 
 <h2>Please, choose the options you would like to play with: </h2>
 
-<%= form_for ThemeCategory.new, :url => accept_options_path, method: :post do |u| %>
+<%= form_for ThemeCategory.new, :url => play_path, method: :post do |u| %>
     <%= u.collection_select :theme_id, Theme.all, :id, :title %>
 
 

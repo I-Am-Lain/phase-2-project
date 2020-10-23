@@ -5,14 +5,10 @@ class GameController < ApplicationController
 
     end
 
-    def accept_options
-
-
-    end
-
     def play
-
+        @theme = Theme.find(params[:theme_category][:theme_id])
     end
+
 
 
 end
