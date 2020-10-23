@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <h1> TIME 2 PLAY </h1>
 
 
@@ -42,3 +43,43 @@ THIS IS ACCEPTING OPTIONS !!!
         <input type="submit">
     </form>
 </ol>
+=======
+<h1> TIME 2 PLAY </h1>
+
+
+THIS IS ACCEPTING OPTIONS !!!
+
+<% counter = 20 %>
+<ol>
+<% @theme.categories.each do |c| %>
+    <h2><%= c.name %></h2>
+    <% c.questions.sample(10).each do |q| %>
+        <li><%= q.content %></li>
+    <% end %>
+<% end %>
+</ol>
+
+<br><br><br><br><br><br>
+
+<% counter = 0 %>
+<ol>
+    <form action="/end", method="post">
+            <% until counter == 30 %>
+                <% @theme.categories.each do |c| %>
+                    <% x = c.questions.sample %>
+                    <b><%= c.name %> --- <%= x.difficulty %>Pts.<b>
+                    <li><%= x.content %></li>
+                    <br>
+
+
+                    <input type="text" name="answer[]" >
+                    <br><br>
+
+
+                    <% counter += 1 %>
+                <% end %>
+            <% end %>
+        <input type="submit">
+    </form>
+</ol>
+>>>>>>> 2eb45c314b72b696c9b7eb35348997df43d71348
