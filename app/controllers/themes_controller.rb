@@ -32,6 +32,10 @@ class ThemesController < ApplicationController
         end
     end
 
+    def show
+        @theme = Theme.find(params[:id])
+    end
+
     def result
         @theme = Theme.find(params[:id])
 
