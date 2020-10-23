@@ -1,5 +1,60 @@
-########### MVP -> css ##############
-"Add" button to questions_index -> adds to specific "Question_Set"
+<html>
+<head>
+  <style> 
+    div {
+      width: 100px;
+      height: 100px;
+      background-color: red;
+      position: relative;
+      animation-name: example;
+      animation-duration: 4s;
+      animation-direction: reverse;
+      animation-iteration-count: infinite;  
+    }
+    
+    @keyframes example {
+      0%   {background-color:red; left:0px; top:0px;}
+      25%  {background-color:yellow; left:200px; top:0px;}
+      50%  {background-color:blue; left:200px; top:200px;}
+      75%  {background-color:green; left:0px; top:200px;}
+      100% {background-color:red; left:0px; top:0px;}
+    }
+    </style>
+</head>  
+<h1> HAPPY Holloween <%= @user.name %>! </h1>
+<br>
+<br>
+<div>
+<audio src="https://www.freesoundeffects.com/mp3_466424.mp3"autoplay></audio>
+
+<a href="http://localhost:3000/">
+  <%= image_tag "https://media1.giphy.com/media/iHzFB3MU19XFRyyXnQ/giphy.gif?cid=ecf05e474eyl09bua7322uf1hskdxz3u8wjvvbn3ewydoyal&rid=giphy.gif", alt: "Horror, Pure Horror" %>
+  </a>
+
+  <%= image_tag "https://64.media.tumblr.com/tumblr_m9rqavw61w1rvf139o1_640.jpg", alt: "Horror, Pure Horror" %>
+
+</html>
+
+  <!-- ########### MVP -> css ##############
+add "Add" button to questions_index -> adds to specific "Question_Set"
+
+#######
+User can have many Question_sets
+have a place for all of a users questions (and ability to make multiple sets)
+     - make sure that user can add question to multiple sets
+     ### a user has many sets
+     ### a set has many questions, belongs to user
+     ### question_set belongs to question and set
+
+
+#################################
+- all models
+#################################
+
+
+
+
+- maybe the welcome page should instead feature username+password fields & you can sign up
 
 
 # if we need to sort questions by difficulty, the Jquestions are sorted by <.difficulty.to_i>
@@ -20,3 +75,14 @@ CLICKABLE FORMS FOR DISPLAYING QUESTIONS => SUCCESS AND FAILURE CONFIRMATION
 pts/per/round AND DISPLAY    
 pts persisting throughout users lifetime-->(leaderboard??)
 
+<<<<<<< HEAD
+=======
+
+#########
+#################
+multiplayer (user+guests)   
+     - ask the same question
+     - "listen", p  u  r  q buzz-in  ###!!!! js and websockets
+           - they can answer
+           - if incorrect, give other players a chance to buzz in -->
+>>>>>>> 507a18dc8012cf9e69f27187e0e8309285c8ca65
