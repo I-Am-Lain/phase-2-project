@@ -17,17 +17,21 @@
         &emsp;
         <a href="/users/<%= @user.id %> ">My Profile</a>
         &emsp;
-        <a href="/users/<%= @user.id %>/edit">Dashboard</a>
+        <a href="/options">Play</a>
+        &emsp;
+        <a href="/users/<%= @user.id %>/themes/new">Create a Theme</a>
         &emsp;
         <a href="/questions">Browse Questions</a>
         &emsp;
         <a href="/categories">Browse Categories</a>
         &emsp;
         <a href="/cart">Cart</a>
+        &emsp;
+        <a href="/users/<%= @user.id %>/edit">Dashboard</a>
       </ul>
     </div>
 
-    <%= form_tag ({controller: 'sessions', action: 'destroy', method: 'post'}) do %>
+  <%= form_tag ({controller: 'sessions', action: 'destroy', method: 'post'}) do %>
       <input type=submit value='logout'>
     <% end %>
   <% end %>
