@@ -1,0 +1,20 @@
+<h1> Its OPTION TIME BABYEEEEEE </h1>
+
+
+<h2> Greetings, sexy and handsome mysterious stranger.... ;) </h2>
+
+<h2>Please, choose the options you would like to play with: </h2>
+
+<%= form_for ThemeCategory.new, :url => accept_options_path, method: :post do |u| %>
+    <%= u.collection_select :theme_id, Theme.all, :id, :title %>
+
+
+    <p><%= u.submit "Use This Set" %></p>
+<% end %>
+
+
+My Themes
+Public Themes
+
+
+Play with All Random Categories instead

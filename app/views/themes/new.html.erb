@@ -5,6 +5,8 @@
   <%= t.text_area :title %>
   <br><br>
 
+  <%= t.collection_check_boxes :category_ids, Category.all, :id, :name %>
+
   
   <br><br>
   <%= t.submit %>

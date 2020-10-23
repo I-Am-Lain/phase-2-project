@@ -1,7 +1,11 @@
 class User < ApplicationRecord
     has_many :themes
+    has_many :theme_categories, through: :themes
     has_many :categories, through: :themes
     has_many :questions, through: :categories
+    # might be over kill on what is exactly theirs
+
+
 
     has_secure_password
 

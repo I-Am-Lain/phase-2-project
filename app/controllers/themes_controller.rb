@@ -13,6 +13,15 @@ class ThemesController < ApplicationController
     def create
         @theme = @user.themes.create(theme_params)
 
+        params[:theme][:category_ids].each do |c|
+
+            if c != ""
+                ThemeCategory.create(theme_id: @theme.id, category_id: c)
+            end
+        end
+
+        #byebug
+
         if @theme.valid?
             flash[:alert] = "Create Set was successful"
             redirect_to user_themes_path

@@ -7,6 +7,13 @@ Rails.application.routes.draw do
   end
   resources :themes, only: [:index]
   resources :theme_categories
+
+
+  get '/game', to: 'game#options'
+  get '/play', to: 'game#play'
+  
+  post '/game', to: 'game#accept_options', as: '/accept_options'
+
   
   patch '/cart', to: 'cart#update', as: 'add_to_cart'
   get '/login', to: 'sessions#new'
